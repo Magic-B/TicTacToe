@@ -10,16 +10,12 @@ body {
   overflow: hidden;
 
   background: url('../img/bg.jpg') no-repeat;
-  background-size: 100%;
+  background-size: 100% 100% cover;
   height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.wrapper {
-  
 }
 
 .wrapper .title {
@@ -41,6 +37,7 @@ body {
   text-align: center;
 }
 .wrapper .play-btn {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

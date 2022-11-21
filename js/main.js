@@ -13,6 +13,7 @@ const winPos = [
   [3, 5, 7]
 ];
 
+let start = false;
 let x = [];
 let o = [];
 
@@ -22,10 +23,11 @@ btn.addEventListener('click', () => {
   document.querySelectorAll('.game-box').forEach((item) => item.textContent = '');
   menuWrap.classList.add('fadeOutLeft');
   boxes.classList.add('gameStart');
+  start = true;
 });
 
 boxes.addEventListener('click', (e) => {
-  if (e.target.id) {
+  if (e.target.id && start) {
     if(whoWalks == 'X') {
       stepFor(e.target, x, 'X', 'O', '#00E0AA');
     }else if (whoWalks == 'O') {
@@ -48,13 +50,20 @@ function stepFor(target, arr, whom, next, color) {
     target.style = `color: ${color}`;
   }
 
-  if (isWin(arr)) {
+  if (isWin(arr) == true) {
     alert(`${whom} is win`);
+    gameOver();
+  }
+  if (isWin(arr) == 'draw') {
+    alert(`this is draw`);
     gameOver();
   }
 }
 
 function isWin(user) {
+  if(user.length >= 5) {
+    return 'draw';
+  }
   return winPos.some((pos) => {
     return pos.every((p) => user.includes(p));
   });
@@ -64,7 +73,7 @@ function gameOver() {
   x = [];
   o = [];
   document.querySelectorAll('.game-box').forEach((item) => item.textContent = '');
-  whoWalks = 'x';
+  whoWalks = 'X';
 }
 
 // const arr = [[1,4], [6,9]];
