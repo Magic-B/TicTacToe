@@ -165,10 +165,8 @@
   to {   
     width: 500px;
     height: 500px;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto;
+    left: 0;
+    right: 0;
     transform: rotate(0deg);
     font-size: 100px;
   }
@@ -176,4 +174,18 @@
 
 .gameStart {
   animation-name: gameStart;
+  --animate-delay: 0s;
+}
+
+@keyframes modalAnimate {
+  from {
+  }
+
+  to {   
+  margin: 40px auto;
+  }
+}
+
+.modalAnimate {
+  animation-name: modalAnimate;
 }

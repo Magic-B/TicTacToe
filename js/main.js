@@ -1,6 +1,8 @@
 const boxes = document.querySelector('.game');
+const box = document.querySelectorAll('.game-box');
 const menuWrap = document.querySelector('.wrapper');
-const btn = document.querySelector('.play-btn');
+const aloneBtn = document.querySelector('#alone');
+const compBtn = document.querySelector('#computer');
 
 const winPos = [
   [1, 2, 3], 
@@ -14,34 +16,39 @@ const winPos = [
 ];
 
 let start = false;
+
 let x = [];
 let o = [];
 
 let whoWalks = 'X';
 
-btn.addEventListener('click', () => {
-  document.querySelectorAll('.game-box').forEach((item) => item.textContent = '');
-  menuWrap.classList.add('fadeOutLeft');
-  boxes.classList.add('gameStart');
-  start = true;
+aloneBtn.addEventListener('click', () => {
+  startGame();
 });
 
 boxes.addEventListener('click', (e) => {
   if (e.target.id && start) {
     if(whoWalks == 'X') {
       stepFor(e.target, x, 'X', 'O', '#00E0AA');
-    }else if (whoWalks == 'O') {
+    } else if (whoWalks == 'O') {
       stepFor(e.target, o, 'O', 'X', '#FFC700');
     }
   }
 });
 
+function startGame() {
+  document.querySelectorAll('.game-box').forEach((item) => item.textContent = '');
+  menuWrap.classList.add('fadeOutLeft');
+  boxes.classList.add('gameStart');
+  start = true;
+}
+
 function stepFor(target, arr, whom, next, color) {
   if (x.includes(+target.id) || o.includes(+target.id)) {
-    alert('Эта позиция занята');
+    openModal('This position is occupied!');
     whoWalks = whom;
   } else if (target.id == '') {
-    alert(`Вы не ввели позицию для ${whom}`);
+    openModal(`You have not entered a position for ${whom}`);
     whoWalks = whom;
   } else {
     arr.push(+target.id);
@@ -76,9 +83,39 @@ function gameOver() {
   whoWalks = 'X';
 }
 
-// const arr = [[1,4], [6,9]];
-// const test = [1,6,7,9];
+// Modal
 
-// arr.some((pos) => {
-//   return pos.every((p) => test.includes(p));
-// })
+const modal = document.querySelector('.modal'),
+      modalCloseBtn = document.querySelector('[data-close]'),
+      okeyBtn = document.querySelector('.close-btn'),
+      modalTitle = document.querySelector('.modal-title'),
+      modalBlock = document.querySelector('.modal-dialog');
+
+function closeModal() {
+  modal.classList.add('hide');
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function openModal(title) {
+  modalTitle.textContent = title;
+  modal.classList.add('show');
+  modalBlock.classList.add('modalAnimate');
+  modal.classList.remove('hide');
+  document.body.style.overflow = 'hidden';
+}
+
+modalCloseBtn.addEventListener('click', closeModal);
+okeyBtn.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+      closeModal();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === "Escape" && modal.classList.contains('show')) { 
+      closeModal();
+  }
+});

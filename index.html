@@ -10,11 +10,21 @@
   <title>TicTacToe</title>
 </head>
 <body>
+
+  <div class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-close" data-close>&times;</div>
+          <div class="modal-title"></div>
+          <button class="close-btn">Okey</button>
+        </div>
+    </div>
+</div>
   
   <div class="wrapper animated zoomIn">
     <div class="title">TicTacToe!</div>
     <div class="subtitle">Let's play tic-tac-toe with you!</div>
-    <div class="play-btn">play</div>
+    <button class="play-btn" id="alone">play</button>
   </div>
   
   <div class="game animated bounceInRight delay-1s">
@@ -28,8 +38,6 @@
     <div class="game-box" id="8" style="color: #FFC700;">O</div>
     <div class="game-box" id="9"></div>
   </div>
-
-  <img src="img/TicTacToe.png" alt="TicTacToe" class="animated bounceInRight delay-1s">
 
   <script src="js/main.js"></script>
 </body>

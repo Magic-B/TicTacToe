@@ -10,7 +10,7 @@ body {
   overflow: hidden;
 
   background: url('../img/bg.jpg') no-repeat;
-  background-size: 100% 100% cover;
+  background-size: cover;
   height: 100vh;
 
   display: flex;
@@ -37,13 +37,14 @@ body {
   text-align: center;
 }
 .wrapper .play-btn {
+  all: unset;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 
-  width: 300px;
+  width: 250px;
   height: 115px;
   clip-path:polygon(0 20%, 100% 27%, 94% 75%, 12% 83%);
   background-color: #fff;
@@ -53,7 +54,6 @@ body {
   font-weight: 400;
   font-size: 50px;
   color: #A976D5;
-  
 }
 
 .game {
@@ -69,6 +69,9 @@ body {
   font-size: 65px;
 
   position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 1130px;
   right: 50px;
   transform: rotate(12deg);
 }
@@ -96,13 +99,76 @@ body {
   border-bottom-right-radius: 20px;
 }
 
-img {
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
   display: none;
-  position: absolute;
-  right: 0;
-  width: 500px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.5)
 }
 
-.hidden {
-  display: none;
+.modal-dialog {
+  max-width: 500px;
+  margin: 40px auto;
+}
+.modal-content {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 4px;max-height:80vh;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 30px;
+  color: #000;
+  opacity: .5;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  cursor: pointer
+}
+.modal-title {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  color: #A976D5;
+
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase
+}
+
+.modal .close-btn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  width: 170px;
+  height: 80px;
+  clip-path:polygon(0 20%, 100% 27%, 94% 75%, 12% 83%);
+  background-color: #A976D5;
+
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  color: #ffffff;
+}
+.show {
+  display: block
+}
+.hide {
+  display: none
 }
