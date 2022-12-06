@@ -86,6 +86,19 @@ body {
   justify-content: center;
 }
 
+.winner {
+  position: absolute;
+  top: 10px;
+
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  color: #fff;
+
+  text-align: center;
+}
+
 .game .game-box:nth-child(1) {
   border-top-left-radius: 20px;
 }
@@ -167,8 +180,20 @@ body {
   color: #ffffff;
 }
 .show {
-  display: block
+  display: block !important;
 }
 .hide {
-  display: none
+  display: none;
+}
+
+.gif {
+  position: absolute;
+  display: none;
+}
+
+#cat1 {
+  left: 100px;
+}
+#cat2 {
+  right: 100px;
 }

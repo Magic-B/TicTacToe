@@ -1,0 +1,73 @@
+.win::after {
+    content: " ";
+    background: rgb(138 0 255 / 83%);
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.win_123::after {
+    height: 10px;
+    width: 100%;
+    transition: width 500ms ease-in-out;
+    top: 15%;
+}
+.win_456::after {
+    height: 10px;
+    width: 100%;
+    transition: width 500ms ease-in-out;
+    top: 49%;
+}
+.win_789::after {
+    height: 10px;
+    width: 100%;
+    transition: width 500ms ease-in-out;
+    top: 83%;
+}
+.win_147::after {
+    width: 10px;
+    height: 100%;
+    transition: height 500ms ease-in-out;
+    left: 15%;
+}
+.win_258::after {
+    width: 10px;
+    height: 100%;
+    transition: height 500ms ease-in-out;
+    left: 49%;
+}
+.win_369::after {
+    width: 10px;
+    height: 100%;
+    transition: height 500ms ease-in-out;
+    left: 83%;
+}
+
+.win_159::after {
+    height: 133%;
+    left: 49% !important;
+    top: -17% !important;
+    width: 10px;
+    right: unset !important;
+    transition: height 500ms linear, left 500ms linear, top 500ms linear, right 500ms linear;
+}
+
+.win_357::after {
+    height: 133%;
+    right: 49% !important;
+    top: -17% !important;
+    width: 10px;
+    left: unset !important;
+    transition: height 500ms linear, left 500ms linear, top 500ms linear, right 500ms linear;
+}
+
+.win_159::after {
+    rotate: 315deg;
+}
+.win_357::after {
+    rotate: 45deg;
+}

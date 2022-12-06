@@ -111,6 +111,80 @@
   animation-name: bounceInRight;
 }
 
+@keyframes bounceInRightCat {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0) scaleX(-3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0) scaleX(-1);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0) scaleX(-0.98);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0) scaleX(-0.995);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0) scaleX(-0.995);
+  }
+}
+
+.bounceInRightCat {
+  display: block !important;
+  animation-name: bounceInRightCat;
+}
+
+@keyframes bounceInLeftCat {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInLeftCat {
+  display: block !important;
+  animation-name: bounceInLeftCat;
+}
+
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -124,21 +198,6 @@
 
 .zoomIn {
   animation-name: zoomIn;
-}
-
-@keyframes fadeOutLeft {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-.fadeOutLeft {
-  animation-name: fadeOutLeft;
 }
 
 @keyframes fadeInLeft {
@@ -155,6 +214,37 @@
 
 .fadeInLeft {
   animation-name: fadeInLeft;
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    transform: scaleX(-1)
+  }
+
+  to {
+    opacity: 0;
+    transform: scaleX(-1) translate3d(-100%, 0, 0);
+  }
+}
+
+.fadeOutRight {
+  animation-name: fadeOutRight;
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.fadeOutLeft {
+  animation-name: fadeOutLeft;
 }
 
 @keyframes gameStart {
@@ -175,17 +265,4 @@
 .gameStart {
   animation-name: gameStart;
   --animate-delay: 0s;
-}
-
-@keyframes modalAnimate {
-  from {
-  }
-
-  to {   
-  margin: 40px auto;
-  }
-}
-
-.modalAnimate {
-  animation-name: modalAnimate;
 }
