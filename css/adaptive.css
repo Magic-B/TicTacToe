@@ -1,4 +1,4 @@
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
 
   body {
     width: 100%;
@@ -53,8 +53,8 @@
   }
   
   .gif {
-    bottom: 10px;
-    width: 170px;
+    bottom: 30px;
+    width: 150px;
   }
 
   @keyframes gameStart {
