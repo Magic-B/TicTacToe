@@ -5,12 +5,16 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   position: relative;
   overflow: hidden;
 
   background: url('../img/bg.jpg') no-repeat;
-  background-size: cover;
+  background-size: cover !important;
   height: 100vh;
 
   display: flex;

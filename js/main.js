@@ -76,15 +76,15 @@ function stepFor(target, arr, whom, next, color) {
 }
 
 function isWin(user) {
-  if(user.length >= 5) {
-    return 'draw';
-  }
-
   let combination = null;
   const win = winPos.some((pos) => {
     combination =  pos;
     return pos.every((p) => user.includes(p));
   });
+
+  if(!win && user.length >= 5) {
+    return 'draw';
+  }
 
   return win ? combination : false;
 }

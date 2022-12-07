@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/combinations.css">
+  <link rel="stylesheet" href="css/adaptive.css">
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@700&family=Bangers&display=swap" rel="stylesheet">
   <title>TicTacToe</title>
 </head>
@@ -16,18 +18,18 @@
         <div class="modal-content">
           <div class="modal-close" data-close>&times;</div>
           <div class="modal-title"></div>
-          <button class="close-btn">Okey</button>
+          <button class="close-btn">Okay</button>
         </div>
     </div>
-</div>
-  
+  </div>
+
   <div class="wrapper animated zoomIn">
-    <div class="title">TicTacToe!</div>
+    <div class="title">TicTacToe</div>
     <div class="subtitle">Let's play tic-tac-toe with you!</div>
     <button class="play-btn" id="alone">play</button>
   </div>
-  
-  <div class="game animated bounceInRight delay-1s">
+
+  <div id="game" class="game animated bounceInRight delay-1s win">
     <div class="game-box" id="1" style="color: #00E0AA;">X</div>
     <div class="game-box" id="2" style="color: #00E0AA;">X</div>
     <div class="game-box" id="3" style="color: #00E0AA;"></div>
@@ -39,6 +41,9 @@
     <div class="game-box" id="9"></div>
   </div>
 
+  <img id="cat1" class="gif animated fast" src="./img/4SHX.gif" alt="gif">
+  <img id="cat2" class="gif animated fast" src="./img/4SHX.gif" alt="gif">
+  
   <script src="js/main.js"></script>
 </body>
 </html>
